@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    const getUserForm = (req, res) => res.render("userForm.ejs");
+
+const displayUserData = (req, res) => {
+    const { name, lastName} = req.body;
+
+    res.render("userData.ejs", ( name, lastName));
+};
+
+module.exports = {
+    getUserForm,
+    displayUserData,
+};
+Rosana López20:20
+<body>
+    <h1>Dinos tu nombre</h1>
+    <form >
+        <div>
+            <label for="name">NOMBRE</label>
+
+        </div>
+        <div>
+            <input type="text" 
+            id="name" 
+            name="name" 
+            placeholder="Escribe tu nombe:">
+        </div>
+        <div>
+            <label for="lastName">APELLIDO</label>
+
+        </div>
+        <div>
+            <input type="text"
+             id="lastName" 
+             name="lastName"
+             placeholder="Escribe tu apellido:">
+        </div>
+        <div>
+            <button type="submit">ENVIAR</button>
+        </div>
+    </form>
+</body>
+</html>
